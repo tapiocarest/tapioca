@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>rest.tapioca</groupId>
+	<artifactId>dependencies</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<name>Tapioca External Dependencies</name>
+	<description>Tapioca library dependencies that are not available in Maven repositories</description>
+	<url>http://www.tapioca.rest</url>
+	<inceptionYear>2016</inceptionYear>
+
+	<organization>
+		<name>Tapioca</name>
+		<url>http://www.tapioca.rest</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<name>Daniel Yokomizo</name>
+			<organization>Tapioca</organization>
+		</developer>
+	</developers>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+				<executions>
+					<execution>
+						<id>install-7layer</id>
+						<phase>install</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<groupId>com.l7tech</groupId>
+							<artifactId>layer7-api</artifactId>
+							<version>8.2.00</version>
+							<packaging>jar</packaging>
+							<file>libraries/com.l7tech.layer7-api-8.2.00.jar</file>
+							<javadoc>libraries/com.l7tech.layer7-api-8.2.00-javadoc.jar</javadoc>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
